@@ -1,23 +1,19 @@
-
 package juanma.parkplus;
 
-import juanma.conexion.MySQL;
-import java.sql.Connection;
 import javax.swing.JOptionPane;
 
 public class ParkPlus {
 
     public static void main(String[] args) {
-       MySQL mysql = new MySQL();
-        Connection conectar = mysql.Conexion();
-
-        if(conectar != null){
-            JOptionPane.showMessageDialog(null,"Conectado");
-        } else {
-            JOptionPane.showMessageDialog(null,"Error");
-        }
-
-        mysql.cerrarConexion();
+        
+        // archivo a leer
+        
+        String rutaCSV1 = "C:\\Users\\juan1\\OneDrive\\Documentos\\JM\\ParkPlus\\vehiculos100.csv";
+       
+        
+// subir datos
+        Funciones.subirDatos(rutaCSV1);
+   
+        JOptionPane.showMessageDialog(null, "carga completa");
     }
-    
 }
