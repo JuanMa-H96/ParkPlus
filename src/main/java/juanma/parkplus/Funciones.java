@@ -1,5 +1,6 @@
 package juanma.parkplus;
 
+import Grafica.MenuPrincipal;
 import juanma.conexion.MySQL;
 import javax.swing.JOptionPane;
 import java.io.BufferedReader;
@@ -56,4 +57,43 @@ public class Funciones {
             Datos.cerrarConexion(); // Cerrar siempre la conexión
         }
     }
-}
+    
+    private static int intentos = 3;
+    public static void Login(String Usuario, String Contraseña, javax.swing.JFrame Login){
+        final String USUARIO = "HERNANDEZ";
+        final String PASS = "Hernandez96";
+        boolean f = false;
+
+        if(Contraseña.length() >= 8) {
+            if(Usuario.equals(USUARIO) && Contraseña.equals(PASS)) {
+                f = true;
+            } else {
+                intentos--;
+                if(intentos > 0) {
+                    JOptionPane.showMessageDialog(Login, "Contraseña o Usuario son incorrectos.\nLe quedan " + intentos + " intentos");
+                } else {
+                    JOptionPane.showMessageDialog(Login, "Se agotaron los intentos. Acceso denegado.");
+                    System.exit(0);
+                }
+            }
+        } else {
+            intentos--;
+            if(intentos > 0) {
+                JOptionPane.showMessageDialog(Login, "Contraseña tiene que tener mínimo 8 caracteres.\nLe quedan " + intentos + " intentos");
+            } else {
+                JOptionPane.showMessageDialog(Login, "Se agotaron los intentos. Acceso denegado.");
+                System.exit(0);
+            }
+        }
+
+        
+        if(f) {
+            MenuPrincipal ventana=new MenuPrincipal();
+           ventana.setVisible(true);
+           ventana.setLocationRelativeTo(null);
+            Login.dispose();
+            
+            intentos = 3; // aqui reinicio, es opcional
+        }
+    }
+    }
