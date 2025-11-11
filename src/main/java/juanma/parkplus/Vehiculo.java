@@ -1,76 +1,39 @@
-
 package juanma.parkplus;
 
 public class Vehiculo {
-public int Id_Usuario;
-    public String Tipo;
-    public String Placa;
-    public String Marca;
-    public String Modelo;
-    public String Color;
-    public int año;
-    
-    public Vehiculo(int Id_Usuario, String Tipo, String Placa, String Marca, String Modelo, String Color, int año){
-        this.Id_Usuario=Id_Usuario;
-        this.Tipo=Tipo;
-        this.Placa=Placa;
-        this.Marca=Marca;
-        this.Modelo=Modelo;
-        this.Color=Color;
-        this.año=año;
+    private String placa;
+    private String tipoVehiculo;
+    private String tipoArea;
+
+    public Vehiculo(String placa,String tipoVehiculo,String tipoArea){
+        this.placa=placa;
+        this.tipoVehiculo=tipoVehiculo;
+        this.tipoArea=tipoArea;
     }
 
-    public int getId_Usuario() {
-        return Id_Usuario;
-    }
-    public String getTipo(){
-        return Tipo;
-    }
+
     public String getPlaca() {
-        return Placa;
+        return placa;
     }
 
-    public String getMarca() {
-        return Marca;
+    public String getTipoVehiculo() {
+        return tipoVehiculo;
     }
 
-    public String getModelo() {
-        return Modelo;
+    public String getTipoArea() {
+        return tipoArea;
     }
 
-    public String getColor() {
-        return Color;
-    }
-
-    public int getAño() {
-        return año;
-    }
-
-    public void setId_Usuario(int Id_Usuario) {
-        this.Id_Usuario = Id_Usuario;
-    }
     
-    public void setTipo(String Tipo){
-        this.Tipo = Tipo;
-    }
-    public void setPlaca(String Placa) {
-        this.Placa = Placa;
+    public void setPlaca(String placa) {
+        this.placa=placa;
     }
 
-    public void setMarca(String Marca) {
-        this.Marca = Marca;
+    public void setTipoVehiculo(String tipoVehiculo) {
+        this.tipoVehiculo=tipoVehiculo;
     }
 
-    public void setModelo(String Modelo) {
-        this.Modelo = Modelo;
+    public void setTipoArea(String tipoArea) {
+        this.tipoArea=tipoArea;
     }
-
-    public void setColor(String Color) {
-        this.Color = Color;
-    }
-
-    public void setAño(int año) {
-        this.año = año;
-    }
-    
 }
